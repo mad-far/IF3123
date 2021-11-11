@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tugas Implementasi Antar Muka</title>
+        <!--
+            Muhammad Adi Fakhri 
+            3411191150
+            DSE-C
+        -->
+    </head>
+    <body>
+        <form name="formTugas" id="tugasku" onsubmit="return validateForm();" method="post">
+            <input type="text" name="username" id="username" placeholder="username"><br>
+            <input type="password" name="password" id="pass" placeholder="Password"><br>
+            <input type="password" name="repeat" id="repeat" placeholder="Ulangi password"><br>
+            <input type="text" name="email" id="email" placeholder="Email"><br>
+            <input type="text" name="telp" id="telp" placeholder="Nomor Telepon"><br>
+            <textarea id="alamat" style="width: 167px;">Alamat</textarea><br>
+            <input type="submit" name="" value="Submit">
+        </form>
+        <script type="text/javascript">
+        function validateForm() {
+            var username = document.formTugas.username.value;
+            var password = document.formTugas.pass.value;
+            var repeat = document.formTugas.repeat.value;
+            var email = document.formTugas.email.value;
+            var telp = document.formTugas.telp.value;
+            var alamat = document.formTugas.alamat.value;
+            var passw = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?!.*\s).{4,256}$/
+            var formatmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+            if (username.length < 3) {
+                alert("Username terlalu pendek");
+                return false;
+            }
+            if (username.length > 15) {
+                alert("Username terlalu panjang");
+            }
+            else{
+                true
+            }
+            if (inputText.value.match(passw)) {
+                document.formTugas.password.focus()
+                return true;
+            }
+            else{
+                alert("Password minimum 4 karakter, terdapat huruf besar, symbol serta angka");
+                return false;
+            }
+            if (inputText.value.match(password)) {
+                document.formTugas.repeat.focus()
+                return true;
+            }
+            else{
+                alert("Password tidak sama");
+                return false;
+            }
+            if (inputText.value.match(formatmail)) {
+                document.formTugas.email.focus()
+                return true;
+            }
+            else{
+                alert("Email Salah");
+                return false;
+            }
+            if (condition) {
+                
+            }
+            if ( isNaN (telp)) {
+                alert("Nomor Telepon harus angka");
+                return false;
+                }
+            if ((telp <10) || (telp >15)) {
+                alert("Nomor Telepon harus 10-15 angka")
+            }
+            else{
+                    return true;
+                }
+            if(alamat == ""){
+                alert("Alamat tidak boleh kosong");
+                return false;
+                }
+            else{
+                return true;
+                }
+        }
+        </script>
+    </body>
+</html>
